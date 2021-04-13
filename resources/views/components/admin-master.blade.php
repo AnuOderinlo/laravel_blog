@@ -57,6 +57,7 @@
 
             <!-- Nav Item - Pages Collapse Menu -->
             <x-admin.sidebar.post-links></x-admin.sidebar.post-links>
+            <x-admin.sidebar.comments-links></x-admin.sidebar.comments-links>
             @if (auth()->user()->userHasRole('Admin'))
                 <x-admin.sidebar.user-links></x-admin.sidebar.user-links>
             @endif
