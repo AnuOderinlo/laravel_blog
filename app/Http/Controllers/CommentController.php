@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Comment;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class CommentController extends Controller
 {
@@ -27,5 +28,26 @@ class CommentController extends Controller
         // $request->session()->flash('success-message', 'Post created successfully');
 
         // return redirect()->route('post.index');
+
+
+    }
+
+
+
+    public function index()
+    {
+        $posts = Auth::user()->posts;
+
+        return view('admin.comments.index', ['posts' => $posts]);
+        
+        
+    }
+
+
+    public function destroy(Comment $comment, Request $request)
+    {
+        $comment->delete();
+
+        return back();
     }
 }
