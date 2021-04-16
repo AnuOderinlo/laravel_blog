@@ -30,6 +30,7 @@
                                 <th>Title</th>
                                 <th>Category</th>
                                 <th>Image</th>
+                                <th>No of Comment</th>
                                 <th>Created At</th>
                                 <th>Updated At</th>
                                 <th>Action</th>
@@ -42,6 +43,7 @@
                                 <th>Title</th>
                                 <th>Category</th>
                                 <th>Image</th>
+                                <th>No of Comment</th>
                                 <th>Created At</th>
                                 <th>Action</th>
                             </tr>
@@ -58,6 +60,7 @@
                                     <td>
                                         <img src="{{ $post->post_image }}" alt="post Image" height="40px"> 
                                     </td>
+                                    <td>{{ $post->comment->count() }}</td>
                                     <td>{{ $post->created_at->diffForHumans() }}</td>
                                     <td>{{ $post->updated_at->diffForHumans() }}</td>
                                     <td>

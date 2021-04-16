@@ -26,7 +26,29 @@ class HomeController extends Controller
     public function index()
     {
         $posts = Post::all();
+        // $posts = Post::all()->where('category_id', 3);
         $categories = Category::all();
         return view('home', ['posts'=>$posts, 'categories'=>$categories]);
     }
+    
+    public function category(Category $category)
+    {
+        $posts =Post::all()->where('category_id', $category->id);
+        $categories = Category::all();
+        return view('home', ['posts' => $posts, 'categories' => $categories]);
+        
+        
+    }
+    
+    public function postBySearch(Request $request, Category $category)
+    {
+        $search_input = "%".$request->search."%";
+        $categories = Category::all();
+        // dd($search_input);
+        $posts = Post::where('title','LIKE', $search_input)->orWhere('body', 'LIKE', $search_input)->get();
+        return view('home', ['posts' => $posts, 'categories' => $categories]);
+
+
+    }
+    
 }

@@ -10,7 +10,10 @@
           <div class="card mb-4">
             <img class="card-img-top" src="{{ $post->post_image }}" alt="Card image cap">
             <div class="card-body">
-              <h2 class="card-title">{{$post->title}}</h2>
+              <h2 class="card-title">{{$post->title}} </h2>
+              <p class="text-right">
+                <span class="text-muted">category: {{ optional($post->category)->name }}</span>
+              </p>
               <p class="card-text">{{Str::limit($post->body, 40, '...')  }}</p>
               <a href="{{ route('post', $post->id) }}" class="btn btn-primary">Read More &rarr;</a>
             </div>
@@ -39,7 +42,7 @@
               <div class="col-lg-6">
                 <ul class="list-unstyled mb-0">
                   <li>
-                    <a href="#">{{ $category->name }}</a>
+                    <a href="{{ route('home.category', $category->id) }}">{{ Str::ucfirst($category->name) }}</a>
                   </li>
                   
                 </ul>

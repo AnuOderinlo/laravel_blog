@@ -21,6 +21,8 @@ use Illuminate\Support\Facades\Route;
 Auth::routes();
 
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/home/{category}', [App\Http\Controllers\HomeController::class, 'category'])->name('home.category');
+Route::post('/home/search', [App\Http\Controllers\HomeController::class, 'postBySearch'])->name('home.search');
 Route::get('/post/{post}', [App\Http\Controllers\PostController::class, 'show'])->name('post');
 
 
