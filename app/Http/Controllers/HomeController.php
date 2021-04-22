@@ -25,7 +25,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $posts = Post::all();
+        $posts = Post::latest()->get();
         // $posts = Post::all()->where('category_id', 3);
         $categories = Category::all();
         return view('home', ['posts'=>$posts, 'categories'=>$categories]);
@@ -42,7 +42,7 @@ class HomeController extends Controller
     
     public function postBySearch(Request $request, Category $category)
     {
-        $search_input = "%".$request->search."%";
+        $search_input = "%".strip_tags($request->search)."%";
         $categories = Category::all();
         // dd($search_input);
         $posts = Post::where('title','LIKE', $search_input)->orWhere('body', 'LIKE', $search_input)->get();

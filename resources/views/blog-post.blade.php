@@ -22,8 +22,8 @@
         <hr>
 
         <!-- Post Content -->
-        <div>
-          {{ $post->body }}
+        <div style="word-wrap: break-word; " >
+          {!! $post->body !!}
         </div>
         <hr>
 

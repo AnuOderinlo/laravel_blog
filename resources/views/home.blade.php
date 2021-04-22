@@ -14,7 +14,7 @@
               <p class="text-right">
                 <span class="text-muted">category: {{ optional($post->category)->name }}</span>
               </p>
-              <p class="card-text">{{Str::limit($post->body, 40, '...')  }}</p>
+              <p class="card-text">{!!Str::limit($post->body, 40, '...')  !!}</p>
               <a href="{{ route('post', $post->id) }}" class="btn btn-primary">Read More &rarr;</a>
             </div>
             <div class="card-footer text-muted">

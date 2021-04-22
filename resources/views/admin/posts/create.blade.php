@@ -25,9 +25,18 @@
             
             <div class="form-group">
                 <label for="">Body</label>
-                <textarea class="form-control" name="body" id=""  rows="10"></textarea>
+                <textarea class="form-control ckeditor" name="body" id=""  rows="10"></textarea>
             </div>
             <button type="submit" class="btn btn-primary"">Create Post</button>
         </form>
+    @endsection
+
+    @section('scripts')
+        <script src="//cdn.ckeditor.com/4.14.1/standard/ckeditor.js"></script>
+        <script type="text/javasceript">
+            $(document).ready(function () {
+                $('.ckeditor').ckeditor();
+            });
+        </script>
     @endsection
 </x-admin-master>

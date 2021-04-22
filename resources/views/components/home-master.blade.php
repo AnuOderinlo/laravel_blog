@@ -130,6 +130,7 @@
   <!-- Bootstrap core JavaScript -->
   <script src="{{asset('vendor/jquery/jquery.min.js')}}"></script>
   <script src="{{asset('vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+  <script src="//cdn.ckeditor.com/4.14.1/standard/ckeditor.js"></script>
 
 </body>
 
