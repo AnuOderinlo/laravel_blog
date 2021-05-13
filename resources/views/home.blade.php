@@ -1,8 +1,8 @@
 <x-home-master>
 
     @section('content')
-        <h1 class="my-4">Page Heading
-          <small>Secondary Text</small>
+        <h1 class="my-4">Welcome to your favourite blogging website
+          {{-- <small>Secondary Text</small> --}}
         </h1>
 
         <!-- Blog Post -->
@@ -14,7 +14,8 @@
               <p class="text-right">
                 <span class="text-muted">category: {{ optional($post->category)->name }}</span>
               </p>
-              <p class="card-text">{!!Str::limit($post->body, 40, '...')  !!}</p>
+              {{-- <p class="card-text">{!!Str::limit($post->body, 40, '...')  !!}</p> --}}
+              <p class="card-text">{!! Str::limit($post->body, 70, '...') !!}</p>
               <a href="{{ route('post', $post->id) }}" class="btn btn-primary">Read More &rarr;</a>
             </div>
             <div class="card-footer text-muted">
@@ -39,7 +40,7 @@
           <div class="card-body">
             <div class="row">
               @foreach ($categories as $category)
-              <div class="col-lg-6">
+              <div class="col-md-6">
                 <ul class="list-unstyled mb-0">
                   <li>
                     <a href="{{ route('home.category', $category->id) }}">{{ Str::ucfirst($category->name) }}</a>

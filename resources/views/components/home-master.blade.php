@@ -24,7 +24,7 @@
   <!-- Navigation -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
     <div class="container">
-      <a class="navbar-brand" href="{{route('home')}}">Start Bootstrap</a>
+      <a class="navbar-brand" href="{{route('home')}}"><i class="text-danger">Bloganything.ng</i></a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -73,9 +73,7 @@
 
       <!-- Blog Entries Column -->
       <div class="col-md-8">
-
         @yield('content')
-
       </div>
 
       <!-- Sidebar Widgets Column -->

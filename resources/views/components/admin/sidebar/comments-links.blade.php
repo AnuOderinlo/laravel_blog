@@ -1,6 +1,6 @@
 <li class="nav-item">
     <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseComment" aria-expanded="true" aria-controls="collapseComment">
-        <i class="fas fa-fw fa-cog"></i>
+        <i class="fas fa-comments"></i>
         <span>Comments</span>
     </a>
     <div id="collapseComment" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">

@@ -86,20 +86,20 @@
     @endsection
     @section('sidebar')
         <h5 class="card-header">Categories</h5>
-          <div class="card-body">
-            <div class="row">
-              @foreach ($categories as $category)
-              <div class="col-lg-6">
-                <ul class="list-unstyled mb-0">
-                  <li>
-                    <a href="#">{{ $category->name }}</a>
-                  </li>
-                  
-                </ul>
-              </div>
-              @endforeach
-             
+        <div class="card-body">
+          <div class="row">
+            @foreach ($categories as $category)
+            <div class="col-lg-6">
+              <ul class="list-unstyled mb-0">
+                <li>
+                  <a href="#">{{ $category->name }}</a>
+                </li>
+                
+              </ul>
             </div>
+            @endforeach
+            
           </div>
+        </div>
     @endsection
 </x-home-master>
