@@ -25,7 +25,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $posts = Post::latest()->get();
+        $posts = Post::latest()->paginate(5);
         // $posts = Post::all()->where('category_id', 3);
         $categories = Category::all();
         return view('home', ['posts'=>$posts, 'categories'=>$categories]);

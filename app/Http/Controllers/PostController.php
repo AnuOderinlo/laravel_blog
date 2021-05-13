@@ -14,6 +14,7 @@ class PostController extends Controller
     public function show(Post $post)
     {
         // dd($id);
+        
         return view('blog-post', ['post'=>$post, 'categories'=>Category::all()]);
     }
 

@@ -26,14 +26,17 @@
         @endforeach
 
         <!-- Pagination -->
-        <ul class="pagination justify-content-center mb-4">
+        {{-- <ul class="pagination justify-content-center mb-4">
           <li class="page-item">
             <a class="page-link" href="#">&larr; Older</a>
           </li>
           <li class="page-item disabled">
             <a class="page-link" href="#">Newer &rarr;</a>
           </li>
-        </ul>
+        </ul> --}}
+         <div class="d-flex justify-content-center">
+            {!! $posts->links() !!}
+        </div>
     @endsection
     @section('sidebar')
         <h5 class="card-header">Categories</h5>
