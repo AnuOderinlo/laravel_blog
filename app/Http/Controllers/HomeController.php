@@ -33,10 +33,11 @@ class HomeController extends Controller
     
     public function category(Category $category)
     {
-        $posts =Post::all()->where('category_id', $category->id);
+        $category = Category::find($category->id);
+        $posts = $category->posts()->paginate(5);
+        // $posts =Post::paginate(5)->where('category_id', $category->id);
         $categories = Category::all();
         return view('home', ['posts' => $posts, 'categories' => $categories]);
-        
         
     }
     

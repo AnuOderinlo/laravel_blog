@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use posts;
 use App\Models\Post;
 use App\Models\User;
 use App\Models\Category;
