@@ -46,7 +46,7 @@ class HomeController extends Controller
         $search_input = "%".strip_tags($request->search)."%";
         $categories = Category::all();
         // dd($search_input);
-        $posts = Post::where('title','LIKE', $search_input)->orWhere('body', 'LIKE', $search_input)->get();
+        $posts = Post::where('title','LIKE', $search_input)->orWhere('body', 'LIKE', $search_input)->paginate(5);
         return view('home', ['posts' => $posts, 'categories' => $categories]);
 
 
